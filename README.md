@@ -1,4 +1,5 @@
 docstats
+--------
 
 docstats is a program to generate statistics about documentation coverage in a Go repository.
 
