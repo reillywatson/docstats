@@ -9,19 +9,23 @@ Reillys-Mac:src reilly$ go install github.com/reillywatson/docstats/cmd/docstats
 Reillys-Mac:src reilly$ docstats github.com/reillywatson/goloose
 Packages: 1
 Packages with docstrings: 0
-Funcs: 30
+Funcs: 5
 Funcs with docstrings: 0
-Types: 1
+Types: 2
 Types with docstrings: 0
+Struct fields: 1
+Struct fields with docstrings: 0
 ```
 
 Sample usage on a less-embarrassing repository:
 ```
-Reillys-Mac:src reilly$ docstats github.com/globalsign/mgo
-Packages: 14
-Packages with docstrings: 5
-Funcs: 917
-Funcs with docstrings: 262
-Types: 158
-Types with docstrings: 89
+Reillys-Mac:src reilly$ docstats go.mongodb.org/mongo-driver/mongo
+Packages: 5
+Packages with docstrings: 1
+Funcs: 406
+Funcs with docstrings: 400
+Types: 85
+Types with docstrings: 85
+Struct fields: 255
+Struct fields with docstrings: 9
 ```
