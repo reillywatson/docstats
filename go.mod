@@ -1,3 +1,3 @@
 module github.com/reillywatson/docstats
 
-go 1.14
+go 1.20

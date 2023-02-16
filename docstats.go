@@ -47,14 +47,21 @@ func (s PkgStats) Add(o PkgStats) PkgStats {
 
 func (s PkgStats) String() string {
 	return fmt.Sprintf(`Packages: %d
-Packages with docstrings: %d
+Packages with docstrings: %d (%.2f%%)
 Funcs: %d
-Funcs with docstrings: %d
+Funcs with docstrings: %d (%.2f%%)
 Types: %d
-Types with docstrings: %d
+Types with docstrings: %d (%.2f%%)
 Struct fields: %d
-Struct fields with docstrings: %d
-`, s.Pkgs, s.PkgsWithDoc, s.Funcs, s.FuncsWithDoc, s.Types, s.TypesWithDoc, s.StructFields, s.StructFieldsWithDoc)
+Struct fields with docstrings: %d (%.2f%%)
+`, s.Pkgs, s.PkgsWithDoc, percent(s.PkgsWithDoc, s.Pkgs), s.Funcs, s.FuncsWithDoc, percent(s.FuncsWithDoc, s.Funcs), s.Types, s.TypesWithDoc, percent(s.TypesWithDoc, s.Types), s.StructFields, s.StructFieldsWithDoc, percent(s.StructFieldsWithDoc, s.StructFields))
+}
+
+func percent(a, b int) float64 {
+	if b == 0 {
+		return 0
+	}
+	return float64(a) / float64(b) * 100
 }
 
 func parseDir(path string) PkgStats {
